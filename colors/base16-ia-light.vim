@@ -2,96 +2,157 @@
 
 " base16-vim (https://github.com/chriskempson/base16-vim)
 " by Chris Kempson (http://chriskempson.com)
-" Harmonic16 Light scheme by Jannik Siebert (https://github.com/janniks)
+" iA Light scheme by iA Inc. (modified by aramisgithub)
 
 " This enables the coresponding base16-shell script to run so that
 " :colorscheme works in terminals supported by base16-shell scripts
 " User must set this variable in .vimrc
 "   let g:base16_shell_path=base16-builder/output/shell/
-if !has('gui_running')
+if !has("gui_running")
   if exists("g:base16_shell_path")
-    execute "silent !/bin/sh ".g:base16_shell_path."/base16-harmonic16-light.sh"
+    execute "silent !/bin/sh ".g:base16_shell_path."/base16-ia-light.sh"
   endif
 endif
 
 " GUI color definitions
-let s:gui00 = "f7f9fb"
-let s:gui01 = "e5ebf1"
-let s:gui02 = "cbd6e2"
-let s:gui03 = "aabcce"
-let s:gui04 = "627e99"
-let s:gui05 = "405c79"
-let s:gui06 = "223b54"
-let s:gui07 = "0b1c2c"
-let s:gui08 = "bf8b56"
-let s:gui09 = "bfbf56"
-let s:gui0A = "8bbf56"
-let s:gui0B = "56bf8b"
-let s:gui0C = "568bbf"
-let s:gui0D = "8b56bf"
-let s:gui0E = "bf568b"
-let s:gui0F = "bf5656"
+let s:gui00        = "f6f6f6"
+let g:base16_gui00 = "f6f6f6"
+let s:gui01        = "dedede"
+let g:base16_gui01 = "dedede"
+let s:gui02        = "bde5f2"
+let g:base16_gui02 = "bde5f2"
+let s:gui03        = "898989"
+let g:base16_gui03 = "898989"
+let s:gui04        = "767676"
+let g:base16_gui04 = "767676"
+let s:gui05        = "181818"
+let g:base16_gui05 = "181818"
+let s:gui06        = "e8e8e8"
+let g:base16_gui06 = "e8e8e8"
+let s:gui07        = "f8f8f8"
+let g:base16_gui07 = "f8f8f8"
+let s:gui08        = "9c5a02"
+let g:base16_gui08 = "9c5a02"
+let s:gui09        = "c43e18"
+let g:base16_gui09 = "c43e18"
+let s:gui0A        = "c48218"
+let g:base16_gui0A = "c48218"
+let s:gui0B        = "38781c"
+let g:base16_gui0B = "38781c"
+let s:gui0C        = "2d6bb1"
+let g:base16_gui0C = "2d6bb1"
+let s:gui0D        = "48bac2"
+let g:base16_gui0D = "48bac2"
+let s:gui0E        = "a94598"
+let g:base16_gui0E = "a94598"
+let s:gui0F        = "8b6c37"
+let g:base16_gui0F = "8b6c37"
 
 " Terminal color definitions
-let s:cterm00 = "00"
-let s:cterm03 = "08"
-let s:cterm05 = "07"
-let s:cterm07 = "15"
-let s:cterm08 = "01"
-let s:cterm0A = "03"
-let s:cterm0B = "02"
-let s:cterm0C = "06"
-let s:cterm0D = "04"
-let s:cterm0E = "05"
-if exists('base16colorspace') && base16colorspace == "256"
-  let s:cterm01 = "18"
-  let s:cterm02 = "19"
-  let s:cterm04 = "20"
-  let s:cterm06 = "21"
-  let s:cterm09 = "16"
-  let s:cterm0F = "17"
+let s:cterm00        = "00"
+let g:base16_cterm00 = "00"
+let s:cterm03        = "08"
+let g:base16_cterm03 = "08"
+let s:cterm05        = "07"
+let g:base16_cterm05 = "07"
+let s:cterm07        = "15"
+let g:base16_cterm07 = "15"
+let s:cterm08        = "01"
+let g:base16_cterm08 = "01"
+let s:cterm0A        = "03"
+let g:base16_cterm0A = "03"
+let s:cterm0B        = "02"
+let g:base16_cterm0B = "02"
+let s:cterm0C        = "06"
+let g:base16_cterm0C = "06"
+let s:cterm0D        = "04"
+let g:base16_cterm0D = "04"
+let s:cterm0E        = "05"
+let g:base16_cterm0E = "05"
+if exists("base16colorspace") && base16colorspace == "256"
+  let s:cterm01        = "18"
+  let g:base16_cterm01 = "18"
+  let s:cterm02        = "19"
+  let g:base16_cterm02 = "19"
+  let s:cterm04        = "20"
+  let g:base16_cterm04 = "20"
+  let s:cterm06        = "21"
+  let g:base16_cterm06 = "21"
+  let s:cterm09        = "16"
+  let g:base16_cterm09 = "16"
+  let s:cterm0F        = "17"
+  let g:base16_cterm0F = "17"
 else
-  let s:cterm01 = "10"
-  let s:cterm02 = "11"
-  let s:cterm04 = "12"
-  let s:cterm06 = "13"
-  let s:cterm09 = "09"
-  let s:cterm0F = "14"
+  let s:cterm01        = "10"
+  let g:base16_cterm01 = "10"
+  let s:cterm02        = "11"
+  let g:base16_cterm02 = "11"
+  let s:cterm04        = "12"
+  let g:base16_cterm04 = "12"
+  let s:cterm06        = "13"
+  let g:base16_cterm06 = "13"
+  let s:cterm09        = "09"
+  let g:base16_cterm09 = "09"
+  let s:cterm0F        = "14"
+  let g:base16_cterm0F = "14"
 endif
 
 " Neovim terminal colours
 if has("nvim")
-  let g:terminal_color_0 =  "#f7f9fb"
-  let g:terminal_color_1 =  "#bf8b56"
-  let g:terminal_color_2 =  "#56bf8b"
-  let g:terminal_color_3 =  "#8bbf56"
-  let g:terminal_color_4 =  "#8b56bf"
-  let g:terminal_color_5 =  "#bf568b"
-  let g:terminal_color_6 =  "#568bbf"
-  let g:terminal_color_7 =  "#405c79"
-  let g:terminal_color_8 =  "#aabcce"
-  let g:terminal_color_9 =  "#bfbf56"
-  let g:terminal_color_10 = "#e5ebf1"
-  let g:terminal_color_11 = "#cbd6e2"
-  let g:terminal_color_12 = "#627e99"
-  let g:terminal_color_13 = "#223b54"
-  let g:terminal_color_14 = "#bf5656"
-  let g:terminal_color_15 = "#0b1c2c"
+  let g:terminal_color_0 =  "#f6f6f6"
+  let g:terminal_color_1 =  "#9c5a02"
+  let g:terminal_color_2 =  "#38781c"
+  let g:terminal_color_3 =  "#c48218"
+  let g:terminal_color_4 =  "#48bac2"
+  let g:terminal_color_5 =  "#a94598"
+  let g:terminal_color_6 =  "#2d6bb1"
+  let g:terminal_color_7 =  "#181818"
+  let g:terminal_color_8 =  "#898989"
+  let g:terminal_color_9 =  "#9c5a02"
+  let g:terminal_color_10 = "#38781c"
+  let g:terminal_color_11 = "#c48218"
+  let g:terminal_color_12 = "#48bac2"
+  let g:terminal_color_13 = "#a94598"
+  let g:terminal_color_14 = "#2d6bb1"
+  let g:terminal_color_15 = "#f8f8f8"
   let g:terminal_color_background = g:terminal_color_0
-  let g:terminal_color_foreground = g:terminal_color_7
+  let g:terminal_color_foreground = g:terminal_color_5
   if &background == "light"
     let g:terminal_color_background = g:terminal_color_7
     let g:terminal_color_foreground = g:terminal_color_2
   endif
+elseif has("terminal")
+  let g:terminal_ansi_colors = [
+        \ "#f6f6f6",
+        \ "#9c5a02",
+        \ "#38781c",
+        \ "#c48218",
+        \ "#48bac2",
+        \ "#a94598",
+        \ "#2d6bb1",
+        \ "#181818",
+        \ "#898989",
+        \ "#9c5a02",
+        \ "#38781c",
+        \ "#c48218",
+        \ "#48bac2",
+        \ "#a94598",
+        \ "#2d6bb1",
+        \ "#f8f8f8",
+        \ ]
 endif
 
 " Theme setup
 hi clear
 syntax reset
-let g:colors_name = "base16-harmonic16-light"
+let g:colors_name = "base16-ia-light"
 
 " Highlighting function
-fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
+" Optional variables are attributes and guisp
+function! g:Base16hi(group, guifg, guibg, ctermfg, ctermbg, ...)
+  let l:attr = get(a:, 1, "")
+  let l:guisp = get(a:, 2, "")
+
   if a:guifg != ""
     exec "hi " . a:group . " guifg=#" . a:guifg
   endif
@@ -104,17 +165,22 @@ fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
   if a:ctermbg != ""
     exec "hi " . a:group . " ctermbg=" . a:ctermbg
   endif
-  if a:attr != ""
-    exec "hi " . a:group . " gui=" . a:attr . " cterm=" . a:attr
+  if l:attr != ""
+    exec "hi " . a:group . " gui=" . l:attr . " cterm=" . l:attr
   endif
-  if a:guisp != ""
-    exec "hi " . a:group . " guisp=#" . a:guisp
+  if l:guisp != ""
+    exec "hi " . a:group . " guisp=#" . l:guisp
   endif
+endfunction
+
+
+fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
+  call g:Base16hi(a:group, a:guifg, a:guibg, a:ctermfg, a:ctermbg, a:attr, a:guisp)
 endfun
 
 " Vim editor colors
 call <sid>hi("Normal",        s:gui05, s:gui00, s:cterm05, s:cterm00, "", "")
-call <sid>hi("Bold", "", "", "", "", "bold", "")
+call <sid>hi("Bold",          "", "", "", "", "bold", "")
 call <sid>hi("Debug",         s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("Directory",     s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("Error",         s:gui00, s:gui08, s:cterm00, s:cterm08, "", "")
@@ -123,13 +189,14 @@ call <sid>hi("Exception",     s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("FoldColumn",    s:gui0C, s:gui01, s:cterm0C, s:cterm01, "", "")
 call <sid>hi("Folded",        s:gui03, s:gui01, s:cterm03, s:cterm01, "", "")
 call <sid>hi("IncSearch",     s:gui01, s:gui09, s:cterm01, s:cterm09, "none", "")
-call <sid>hi("Italic", "", "", "", "", "italic", "")
+call <sid>hi("Italic",        "", "", "", "", "none", "")
 call <sid>hi("Macro",         s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("MatchParen",    "", s:gui03, "", s:cterm03,  "", "")
 call <sid>hi("ModeMsg",       s:gui0B, "", s:cterm0B, "", "", "")
 call <sid>hi("MoreMsg",       s:gui0B, "", s:cterm0B, "", "", "")
 call <sid>hi("Question",      s:gui0D, "", s:cterm0D, "", "", "")
-call <sid>hi("Search",        s:gui03, s:gui0A, s:cterm03, s:cterm0A,  "", "")
+call <sid>hi("Search",        s:gui01, s:gui0A, s:cterm01, s:cterm0A,  "", "")
+call <sid>hi("Substitute",    s:gui01, s:gui0A, s:cterm01, s:cterm0A, "none", "")
 call <sid>hi("SpecialKey",    s:gui03, "", s:cterm03, "", "", "")
 call <sid>hi("TooLong",       s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("Underlined",    s:gui08, "", s:cterm08, "", "", "")
@@ -239,8 +306,8 @@ call <sid>hi("GitGutterDelete",  s:gui08, s:gui01, s:cterm08, s:cterm01, "", "")
 call <sid>hi("GitGutterChangeDelete",  s:gui0E, s:gui01, s:cterm0E, s:cterm01, "", "")
 
 " HTML highlighting
-call <sid>hi("htmlBold", "", "", "", "", "bold", "")
-call <sid>hi("htmlItalic", "", "", "", "", "italic", "")
+call <sid>hi("htmlBold",    s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("htmlItalic",  s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("htmlEndTag",  s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("htmlTag",     s:gui05, "", s:cterm05, "", "", "")
 
@@ -289,6 +356,7 @@ call <sid>hi("NERDTreeExecFile",  s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("phpMemberSelector",  s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("phpComparison",      s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("phpParent",          s:gui05, "", s:cterm05, "", "", "")
+call <sid>hi("phpMethodsVar",      s:gui0C, "", s:cterm0C, "", "", "")
 
 " Python highlighting
 call <sid>hi("pythonOperator",  s:gui0E, "", s:cterm0E, "", "", "")
@@ -317,10 +385,25 @@ call <sid>hi("SignifySignChange",  s:gui0D, s:gui01, s:cterm0D, s:cterm01, "", "
 call <sid>hi("SignifySignDelete",  s:gui08, s:gui01, s:cterm08, s:cterm01, "", "")
 
 " Spelling highlighting
-call <sid>hi("SpellBad",     "", s:gui00, "", s:cterm00, "undercurl", s:gui08)
-call <sid>hi("SpellLocal",   "", s:gui00, "", s:cterm00, "undercurl", s:gui0C)
-call <sid>hi("SpellCap",     "", s:gui00, "", s:cterm00, "undercurl", s:gui0D)
-call <sid>hi("SpellRare",    "", s:gui00, "", s:cterm00, "undercurl", s:gui0E)
+call <sid>hi("SpellBad",     "", "", "", "", "undercurl", s:gui08)
+call <sid>hi("SpellLocal",   "", "", "", "", "undercurl", s:gui0C)
+call <sid>hi("SpellCap",     "", "", "", "", "undercurl", s:gui0D)
+call <sid>hi("SpellRare",    "", "", "", "", "undercurl", s:gui0E)
+
+" Startify highlighting
+call <sid>hi("StartifyBracket",  s:gui03, "", s:cterm03, "", "", "")
+call <sid>hi("StartifyFile",     s:gui07, "", s:cterm07, "", "", "")
+call <sid>hi("StartifyFooter",   s:gui03, "", s:cterm03, "", "", "")
+call <sid>hi("StartifyHeader",   s:gui0B, "", s:cterm0B, "", "", "")
+call <sid>hi("StartifyNumber",   s:gui09, "", s:cterm09, "", "", "")
+call <sid>hi("StartifyPath",     s:gui03, "", s:cterm03, "", "", "")
+call <sid>hi("StartifySection",  s:gui0E, "", s:cterm0E, "", "", "")
+call <sid>hi("StartifySelect",   s:gui0C, "", s:cterm0C, "", "", "")
+call <sid>hi("StartifySlash",    s:gui03, "", s:cterm03, "", "", "")
+call <sid>hi("StartifySpecial",  s:gui03, "", s:cterm03, "", "", "")
+
+" Java highlighting
+call <sid>hi("javaOperator",     s:gui0D, "", s:cterm0D, "", "", "")
 
 " Remove functions
 delf <sid>hi
